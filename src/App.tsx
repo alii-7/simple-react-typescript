@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Hello from './components/Hello'
+import Helloo from './components/Helloo'
+import Hellooo from './components/Hellooo'
+
+export interface Object{
+  name: string,
+  enthusiasmLevel:number
+}
 
 const App: React.FC = () => {
+  const obj: Object = {
+    name:'test',
+    enthusiasmLevel:5
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Hello {...obj}/>
+      <Helloo {...obj} />
+      <Hellooo {...obj} />
     </div>
   );
 }
